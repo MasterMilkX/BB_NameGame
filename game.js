@@ -79,6 +79,7 @@ function selectClass(class_name){
 function newName(){
     student_img.src = "";
     student_name.value = "";
+    student_name.placeholder = "";
     localMiss = 0;
 
     student_name.focus();

@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <title>Blackboard Name Game</title>
+        <style>
+            body{
+                background-color: #323232;
+                color: #ffffff;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            #container{
+                width: 80%;
+                border:5px dashed rgb(226, 226, 226);
+                margin:2em auto;
+                padding-bottom:3em;
+                /* background-color: rgb(231, 231, 231); */
+            }
+            #title{
+                text-align: center;
+                font-size: 3.5em;
+            }
+            .mainscreen{
+                width: 100%;
+                text-align: center;
+            }
+            .instr{
+                font-size: 1.5em;
+            }
+            #classScroll{
+                overflow-y: scroll;
+                width:50%;
+                margin: 1em auto;
+                height: 20em;
+                min-height: 200px;
+                border:2px solid #dedede;
+            }
+            .classOpt{
+                padding: 0.75em;
+                font-size: 1.5em;
+                text-align: left;
+                cursor: pointer;
+                background-color: #cfcfcf;
+                color: #323232;
+                border-bottom: #323232;
+                border-radius: 3px;
+                margin:4px;
+            }
+            .classOpt:hover{
+                background-color: #eae281;
+            }
+
+
+            #student-img{
+                width: 250px;
+                height: 250px;
+                border-radius: 10px;
+                border: 5px solid #ffffff;
+                margin:2em auto;
+                display: flex;
+            }
+            #student-name{
+                font-size: 1.75em;
+                text-align: center;
+                margin:1em auto;
+                display: flex;
+                
+            }
+            #student-name::placeholder{
+                color: #dfdfdf;
+            }
+
+
+            button{
+                background-color: #dcdcdc;
+                color: #000000;
+                border: none;
+                padding: 1em;
+                border-radius: 10px;
+                font-size: 1.5em;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: #7dc98b;
+            }
+
+            #menu-game, #menu-score, #restart{
+                margin-top:5em;
+                font-size:1em;
+            }
+
+        </style>
+        
+    </head>
+    <body onload="init();">
+        <div id="container">
+            <h1 id="title">Blackboard Name Game</h1>
+            <!-- MAIN MENU -->
+            <div id="menu" class="mainscreen">
+                <p class="instr">Select a class</p>
+                <div id="classScroll"> 
+                    <div class="classOpt" onclick="startGame('all');">CMSC 150 - 01</div>
+                    <div class="classOpt" onclick="startGame('all');">CMSC 150 - 02</div>
+                </div>
+
+                <button id="start" onclick="selectClass('all')">All Classes</button>
+            </div>
+            <!-- GAME -->
+            <div id="game"  class="mainscreen">
+                <p class="instr">Type the name of the student shown</p>
+                <img id="student-img" src="" alt="Student Image">
+                <input type="text" id="student-name" placeholder="Student Name" onkeyup="checkName(event);">
+                <button id="menu-game" onclick="changeScreen('menu')">Back to Menu</button>
+            </div>
+
+            <!-- SCORE -->
+            <div id="score" class="mainscreen">
+                <p class="instr">Final Score</span></p>
+                <div id="score-div">
+                    <div id="correct-div">
+                        <div class="score-label">Correct</div>
+                        <div id="correct-ct">0</div>
+                    </div>
+                    <div id="miss-div">
+                        <div class="score-label">Miss</div>
+                        <div id="miss-ct">0</div>
+                    </div>
+                </div>
+
+                <button id="menu-score" onclick="changeScreen('menu')">Back to Menu</button>
+                <button id="restart" onclick="changeScreen('game')">Restart</button>
+            </div>
+        </div>
+    </body>
+    <script src="game.js"></script>
+</html>

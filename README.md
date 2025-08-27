@@ -26,7 +26,7 @@ Turns the headshots of students from the Blackboard system into a game to learn 
     - *Note: You may also manually remove yourself from the JSON created later instead*
 2. To create the game data you will need to run the following file for your OS (double-click): 
     - Windows: [make_game_data_windows.bat](make_game_data_windows.bat)
-    - MacOS + Linux: [make_game_data_macos.sh](make_game_data_macos.sh)
+    - MacOS + Linux: [make_game_data_macos.command](make_game_data_macos.command)
     Make sure you have Python installed!
 3. After running the command, you should have a new file called [class_photos.json](class_photos.json). This file contains the name and image association to each student in each class folder given in [html](html/). You can modify the name of a student (e.g. using a preferred name or nickname, fixing typos) in this JSON file and it will update in the game.
 
@@ -34,8 +34,8 @@ Turns the headshots of students from the Blackboard system into a game to learn 
 ### Playing the Game
 
 1. To play the game you will need to run the following file for your OS (double-click): 
-    - Windows: [start_game.bat](start_game.bat)
-    - MacOS + Linux: [start_game.sh](start_game.sh)
+    - Windows: [start_game_windows.bat](start_game_windows.bat)
+    - MacOS + Linux: [start_game_macos.command](start_game_macos.command)
     This should open a browser window automatically.
 
 2. Click on the class you would like to play the name game for.

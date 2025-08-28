@@ -127,6 +127,10 @@ function endGame(){
     document.getElementById("miss-ct").innerHTML = miss;
 }
 
+function reset(){
+    selectClass(class_choice);
+}
+
 function getCurStudent(){
     console.log(active_set[student_index]);
 }
